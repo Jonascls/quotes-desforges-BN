@@ -9,7 +9,7 @@ def load_quotes(filename):
         if line:
             quotes.append(line)
     return quotes
-
+        
 def random_quote(quotes):
     random_quote = random.choice(quotes)
     return random_quote
@@ -20,3 +20,12 @@ def print_quote(quote):
 def view_quotes(quotes):
     for quote in quotes:
         print_quote(quote)
+
+def display_quotes(quotes, count):
+    if count >= len(quotes):
+        print("All Quotes:")
+        view_quotes(quotes)
+    else:
+        print(f"First {count} Quotes:")
+        for i in range(count):
+            print_quote(quotes[i])
